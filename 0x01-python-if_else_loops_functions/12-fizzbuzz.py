@@ -4,7 +4,9 @@ def fizzbuzz():
         if (i % 3 != 0 and i % 5 != 0):
             print(i, end=" ")
         else:
+            str = ""
             if (i % 3 == 0):
-                print("Fizz", end="")
+                str += "Fizz"
             if (i % 5 == 0):
-                print("Buzz", end="")
+                str += "Buzz"
+            print(str, end= " ")
