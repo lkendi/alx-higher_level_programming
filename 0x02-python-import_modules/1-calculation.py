@@ -11,7 +11,6 @@ def main():
     print("{} + {} = {}".format(a, b, prod))
     div = calculator_1.div(a, b)
     print("{} + {} = {}".format(a, b, div))
-    
 
 
 if __name__ == "__main__":
