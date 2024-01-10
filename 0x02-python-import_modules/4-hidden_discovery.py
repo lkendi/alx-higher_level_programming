@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import marshal
+
+
 def main():
     with open('hidden_4.pyc', 'rb') as file:
         contents = file.read()
