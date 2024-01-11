@@ -1,51 +1,44 @@
 #include "lists.h"
 
-/**
- * is_palindrome - checks if a singly linked list is a plaindrome
- * @head: pointer to the head node
- * Return: 0 if not a palindrome, 1 if it is a palindrome
-*/
-
 int is_palindrome(listint_t **head)
 {
-	listint_t *ptr;
-	int count, center, i, queue[100];
+	listint_t *ptr_slow = *head, *ptr_fast = *head;
+	listint_t *prev = NULL, *current, *next;
 
-	/*An empty list is considered a palindrome*/
-	if (*head == NULL)
+	/*Handle empty and single-node lists*/
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-	/*Find the length of the list*/
-	count = 0;
-	ptr = *head;
-	while (ptr != NULL)
-	{
-		ptr = ptr->next;
-		count++;
-	}
-	/*List with an odd length cannot contain a palindrome*/
-	if (count % 2 != 0)
-		return (0);
 
-	/*Find the center of the list*/
-	center = count / 2;
-
-	ptr = *head;
-	for (i = 0; i < center; i++)
+	/*Find the middle of the list*/
+	while (ptr_fast != NULL && ptr_fast->next != NULL)
 	{
-		queue[i] = ptr->n;
-		ptr = ptr->next;
-		printf("\nQueue [%d]: %d", i, queue[i]);
+		ptr_slow = ptr_slow->next;
+		ptr_fast = ptr_fast->next->next;
 	}
-	for (i = center - 1; i >= 0; i--)
+	/**
+	* Reverse the second half of the list,
+	* starting from the node after the middle node
+	* and stopping before the middle node
+	*/
+	current = ptr_slow->next;
+	while (current != NULL)
 	{
-		if (ptr->n == queue[i])
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+
+	/*Compare the first and second halves*/
+	ptr_slow = *head;
+	while (prev != NULL)
+	{
+		if (ptr_slow->n != prev->n)
 		{
-			printf("\nQueue2 [%d]: %d", i, queue[i]);
-			printf("\nPtr: %d", ptr->n);
-			ptr = ptr->next;
-		}
-		else
 			return (0);
+		}
+		ptr_slow = ptr_slow->next;
+		prev = prev->next;
 	}
 	return (1);
 }
