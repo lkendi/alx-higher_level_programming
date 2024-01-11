@@ -11,10 +11,7 @@ def search_replace(my_list, search, replace):
     Returns:
         A new list with the elements replaced
     """
-    if my_list is None or len(my_list) <= 0:
-        return
-    else:
-        new_list = list()
-        for item in my_list:
-            new_list.append(replace if item == search else item)
-        return new_list
+    new_list = list()
+    for item in my_list:
+        new_list.append(replace if item == search else item)
+    return new_list
