@@ -11,4 +11,7 @@ def multiply_by_2(a_dictionary):
         a new dictionary with all values of the original dictionary
         multiplied by 2
         """
-    return {key: value * 2 for key, value in a_dictionary.items()}
+    result = dict()
+    for key, value in a_dictionary.items():
+        result[key] = value * 2
+    return result

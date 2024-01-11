@@ -12,6 +12,8 @@ def simple_delete(a_dictionary, key=""):
         The dictionary with the specified key deleted
         Or the original dictionary if the key does not exist
     """
+    if list is None:
+        return
     if key in a_dictionary:
         del a_dictionary[key]
     return a_dictionary

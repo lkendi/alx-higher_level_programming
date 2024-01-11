@@ -11,5 +11,7 @@ def update_dictionary(a_dictionary, key, value):
     Returns:
         The dictionary with the new key-value pair replaced or added
     """
+    if list is None:
+        return
     a_dictionary[key] = value
     return a_dictionary
