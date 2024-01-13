@@ -10,6 +10,8 @@ def print_sorted_dictionary(a_dictionary):
     Returns:
         The dictionary ordered by keys
     """
+    if a_dictionary is None:
+        return
     for key in sorted(a_dictionary.keys()):
         value = a_dictionary[key]
         if isinstance(value, dict):
