@@ -17,4 +17,3 @@ def print_sorted_dictionary(a_dictionary):
             print_sorted_dictionary(value)
         else:
             print(f"{key}: {value}")
-
