@@ -10,5 +10,7 @@ def print_sorted_dictionary(a_dictionary):
     Returns:
         The dictionary ordered by keys
     """
-    for key in sorted(a_dictionary.keys()):
+    sorted_keys = sorted(a_dictionary.keys())
+    for key in sorted_keys:
         print(key, ":", a_dictionary[key])
+
