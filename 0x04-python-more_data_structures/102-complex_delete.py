@@ -12,7 +12,7 @@ def complex_delete(a_dictionary, value):
         Or the original dictionary unchanged if the value does not exist
     """
     keys_to_delete = []
-    for key , val in a_dictionary.items():
+    for key, val in a_dictionary.items():
         if val == value:
             keys_to_delete.append(key)
         else:
