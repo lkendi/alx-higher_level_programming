@@ -13,11 +13,14 @@ def safe_print_list(my_list=[], x=0):
     """
     print_count = 0
     try:
-        for i in range(x):
-            print(my_list[i], end="")
-            print_count += 1
-    except IndexError:
-        pass
+        i = 0
+        while i < x:
+            try:
+                print(my_list[i], end="")
+                print_count += 1
+            except IndexError:
+                break
+            i += 1
     finally:
         print()
     return print_count
