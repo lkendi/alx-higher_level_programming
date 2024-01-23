@@ -6,7 +6,8 @@ def safe_print_list_integers(my_list=[], x=0):
 
     Args:
         my_list: list of values (can contain any type)
-        x: number of elements of the list to print (can be bigger than the list length)
+        x: number of elements of the list to print
+        (can be bigger than the list length)
 
     Returns:
         The real number of integers printed
