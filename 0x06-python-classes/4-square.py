@@ -3,12 +3,10 @@ class Square:
     def __init__(self, size):
         self.__size = size
 
-    #Getter
     @property
     def size(self):
         return self.__size
 
-    #Setter
     @size.setter
     def size(self, value):
         if not isinstance(value, int):
