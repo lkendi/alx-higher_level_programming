@@ -5,7 +5,8 @@ class Square:
 
     Attributes:
         __size (int): The size of the square (private attribute).
-        __position (tuple): The (x, y) coordinates of the square's top-left corner (private attribute).
+        __position (tuple): The (x, y) coordinates of the square's
+        top-left corner (private attribute).
     """
     def __init__(self, size=0, position=(0, 0)):
 
@@ -56,7 +57,8 @@ class Square:
         Sets the position of the square.
 
         Args:
-            value (tuple): The new position of the square, as a tuple of two integers.
+            value (tuple): The new position of the square,
+            as a tuple of two integers.
 
         Raises:
             TypeError: If value is not a tuple of two integers.
