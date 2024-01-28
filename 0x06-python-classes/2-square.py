@@ -12,7 +12,7 @@ class Square:
     """Blueprint for a square object
 
     Attributes:
-        size(int): square size
+        __size(int): square size
 
     Methods:
         __init__ : initializes a square object
@@ -24,8 +24,8 @@ class Square:
             size - size of the square
 
         Raises:
-            TypeError: size must be an integer
-            ValueError: size must be >= 0
+            TypeError: if size is not an integer
+            ValueError: if size is less than 0
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
