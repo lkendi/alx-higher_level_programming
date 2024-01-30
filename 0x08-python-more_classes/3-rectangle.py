@@ -91,9 +91,7 @@ class Rectangle:
 
     def __str__(self):
         """Prints the rectangle with the # character"""
-        res = ""
-        for i in range(self.__height):
-            res += "#" * self.__width
-            if i < self.__height - 1:
-                res += "\n"
-        return res
+        if self.__height == 0 or self.__width == 0:
+            return ""
+        res = "#" * self.__width
+        return (res + "\n") * (self.__height - 1) + res
