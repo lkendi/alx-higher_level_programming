@@ -7,3 +7,6 @@ print(my_rectangle.__dict__)
 my_rectangle.width = 10
 my_rectangle.height = 3
 print(my_rectangle.__dict__)
+
+rect_2 = Rectangle(-1 ,-5)
+print(rect_2.__dict__)
