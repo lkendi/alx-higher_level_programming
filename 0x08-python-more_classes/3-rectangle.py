@@ -10,10 +10,12 @@ class Rectangle:
         height(int): rectangle height (private)
 
     Methods:
+        __init__: initializes a new rectangle object
         width(self): width property getter
         width(self, value): width property setter
         area:(self): calculates rectangle area
         perimeter(self): calculates rectangle perimeter
+        __str__: prints a rectangle using the print symbol
     """
     def __init__(self, width=0, height=0):
         """Intializes a new rectangle instance
