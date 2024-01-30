@@ -19,7 +19,7 @@ class Rectangle:
         Args:
             width: rectangle width; default value of 0
             height: rectangle height; default value of 0
-        
+
         Raises:
             TypeError: if width and/or height are not integers
             ValueError: if width and/or height are less than 0
