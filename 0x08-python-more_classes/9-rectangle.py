@@ -15,14 +15,15 @@ class Rectangle:
         __init__: initializes a new rectangle object
         width(self): width property getter
         width(self, value): width property setter
-        area:(self): calculates rectangle area
-        perimeter(self): calculates rectangle perimeter
+        area: calculates rectangle area
+        perimeter: calculates rectangle perimeter
         __str__: prints a rectangle using the print symbol
         __repr__: returns a string representation of the rectangle
                     to be able to recretae a new instance using eval()
         __del__: deletes a rectangle instance
-        bigger_or_equal(rect_1, rect_2): returns the biggest rectangle
-                                        based on area
+        bigger_or_equal: returns the biggest rectangle
+                                            based on area
+        square: returns a new Rectangle instance with width == height == size
     """
     number_of_instances = 0
     print_symbol = "#"
@@ -139,3 +140,13 @@ class Rectangle:
             return rect_2
         else:
             return rect_1
+
+    @classmethod
+    def square(cls, size=0):
+        """Returns a new Rectangles instance with
+            width == height == size
+
+        Args:
+            size: width and height value
+        """
+        return Rectangle(size, size)
