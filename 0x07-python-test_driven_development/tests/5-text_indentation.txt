@@ -1,0 +1,24 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation(12)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation("Software Engineering")
+Software Engineering
+
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("")
+
+>>> text_indentation("Software. Engineering? Is interesting: Yes")
+Software
+<BLANKLINE>
+Engineering
+<BLANKLINE>
+Is interesting
+<BLANKLINE>
