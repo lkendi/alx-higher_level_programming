@@ -2,7 +2,11 @@
 """
 Matrix multiplication using numpy
 """
+
+
 import numpy as np
+
+
 def lazy_matrix_mul(m_a, m_b):
     """Function that multiplies 2 matrices
 
@@ -43,7 +47,7 @@ def lazy_matrix_mul(m_a, m_b):
         raise TypeError("each row of m_b must be of the same size")
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
-    
+
     np_a = np.array(m_a)
     np_b = np.array(m_b)
     result = np.matmul(np_a, np_b)
