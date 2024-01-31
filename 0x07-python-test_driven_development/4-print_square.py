@@ -1,5 +1,7 @@
-#!usr/bin/python3
-"""Module that prints a square"""
+#!/usr/bin/python3
+"""
+Module that prints a square
+"""
 
 
 def print_square(size):
