@@ -17,11 +17,13 @@ def matrix_mul(m_a, m_b):
         ValueError: if m_a or m_b is empty
                    or if m_a and m_b can't be multiplied
     """
-    if not isinstance(m_a, list) or not all(
-            isinstance(row, list) for row in m_a):
+    if not isinstance(m_a, list):
+        raise TypeError("m_a must be a list")
+    if not all(isinstance(row, list) for row in m_a):
         raise TypeError("m_a must be a list of lists")
-    if not isinstance(m_b, list) or not all(
-            isinstance(row, list) for row in m_b):
+    if not isinstance(m_b, list):
+        raise TypeError("m_b must be a list")
+    if not all(isinstance(row, list) for row in m_b):
         raise TypeError("m_b must be a list of lists")
     if m_a == [] or m_a == [[]]:
         raise ValueError("m_a can't be empty")

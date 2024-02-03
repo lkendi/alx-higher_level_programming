@@ -54,12 +54,12 @@ ValueError: m_b should contain only integers or floats
 >>> print(matrix_mul("School", [[1]]))
 Traceback (most recent call last):
     ...
-TypeError: m_a must be a list of lists
+TypeError: m_a must be a list
 
 >>> print(matrix_mul([[1]], "School"))
 Traceback (most recent call last):
     ...
-TypeError: m_b must be a list of lists
+TypeError: m_b must be a list
 
 >>> print(matrix_mul([[1, 2],[3, 4, 5]], [[3, 4], [5, 6]]))
 Traceback (most recent call last):
