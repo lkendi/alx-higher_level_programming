@@ -16,9 +16,10 @@ TypeError: text_indentation() missing 1 required positional argument: 'text'
 >>> text_indentation("")
 
 >>> text_indentation("Software. Engineering? Is interesting: Yes")
-Software
+Software.
 <BLANKLINE>
-Engineering
+Engineering?
 <BLANKLINE>
-Is interesting
+Is interesting:
 <BLANKLINE>
+Yes
