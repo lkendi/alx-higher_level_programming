@@ -60,6 +60,9 @@ TypeError: distance must be an integer
 
 >>> #value is a bool
 >>> bg.integer_validator("distance", True)
+Traceback (most recent call last):
+  ...
+TypeError: distance must be an integer
 
 >>> #value is None
 >>> bg.integer_validator("distance", None)
