@@ -1,0 +1,31 @@
+>>> # Empty list
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+
+>>> # List with one value
+>>> my_list.append(1)
+>>> print(my_list)
+[1]
+>>> my_list.print_sorted()
+[1]
+
+>>> # List with repeated value
+>>> my_list.append(1)
+>>> print(my_list)
+[1, 1]
+>>> my_list.print_sorted()
+[1, 1]
+
+>>> my_list.append(6)
+>>> my_list.append(-40)
+>>> print(my_list)
+[1, 1, 6, -40]
+>>> my_list.print_sorted()
+[-40, 1, 1, 6]
+
+>>> print(issubclass(MyList, list))
+True
