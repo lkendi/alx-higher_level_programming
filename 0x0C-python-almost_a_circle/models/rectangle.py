@@ -102,10 +102,29 @@ class Rectangle(Base):
 
     def display(self):
         """Prints a rectangle using # character"""
+        for _ in range(self.__y):
+            """y - vertical offset"""
+            print()
         for _ in range(self.__height):
-            print("#" * self.__width)
+            """x - horizontal offset"""
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """Prints rectangle description"""
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y}\
-                    - {self.__width}/{self.__height}"
+        return ("[Rectangle] ({}) {}/{} - {}/{}"
+                .format(self.id, self.__x, self.__y,
+                        self.__width, self.__height))
+
+    def update(self, *args):
+        """Assigns an argunment to each attribute
+        in the specified order"""
+        if len(args) >= 1:
+            self.id = args[0]
+        if len(args) >= 2:
+            self.__width = args[1]
+        if len(args) >= 3:
+            self.__height = args[2]
+        if len(args) >= 4:
+            self.__x = args[3]
+        if len(args) >= 5:
+            self.__y = args[4]
