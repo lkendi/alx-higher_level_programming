@@ -13,7 +13,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """Returns square description"""
-        return ("[Square]({}) {}/{} - {}"
+        return ("[Square] ({}) {}/{} - {}"
                 .format(self.id, self.x, self.y, self.width))
 
     @property
@@ -43,3 +43,8 @@ class Square(Rectangle):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Returns the dictionaty representation of a rectangle"""
+        return {'id': self.id, 'size': self.width,
+                'x': self.x, 'y': self.y}
