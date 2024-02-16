@@ -24,3 +24,25 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """Returns the JSON string rep of a list of dictionaries"""
+        if list_dictionaries is None:
+            return "[]"
+        else:
+            return str(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """writes the JSON string rep of list_objs to a file
+
+        Args:
+            list_objs: list og instances who inherits of Base
+                    e.g Rectangle and Square instances
+        """
+        if list_objs is None:
+            list_objs = []
+        file = cls.__name__ + ".json"
+        with open(file, "w") as f:
+            f.write(cls.to_json_string([obj.to_dictionary() for obj in list_objs]))
+
