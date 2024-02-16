@@ -17,6 +17,39 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.y, 8)
         self.assertEqual(r.id, 9)
 
+    def test_init_with_invalid_width(self):
+        with self.assertRaises(TypeError):
+            Rectangle("1", 2)
+
+    def test_init_with_invalid_height(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1, "2")
+
+    def test_init_with_invalid_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, "3")
+
+    def test_init_with_invalid_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, "4")
+    
+    def test_init_with_negative_width(self):
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 2)
+
+    def test_init_with_negative_height(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, -2)
+
+    def test_init_with_negative_x(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -3)
+
+    def test_init_with_negative_y(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, 3, -4)
+
+
     def test_area(self):
         r = Rectangle(5, 6)
         self.assertEqual(r.area(), 30)
