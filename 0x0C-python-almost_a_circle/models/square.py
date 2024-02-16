@@ -24,6 +24,7 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, size):
+        """Size setter"""
         if not isinstance(size, int):
             raise TypeError("width must be an integer")
         if size <= 0:
@@ -32,6 +33,8 @@ class Square(Rectangle):
         self.height = size
 
     def update(self, *args, **kwargs):
+        """Assigns an argunment to each attribute
+        in the specified order"""
         if args:
             if len(args) >= 1:
                 self.id = args[0]
