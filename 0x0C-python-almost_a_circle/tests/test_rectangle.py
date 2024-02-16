@@ -4,6 +4,8 @@
 
 import unittest
 import io
+import sys
+import os
 import unittest.mock
 from models.rectangle import Rectangle
 
@@ -24,6 +26,14 @@ class TestRectangle(unittest.TestCase):
     def test_init_with_invalid_height(self):
         with self.assertRaises(TypeError):
             Rectangle(1, "2")
+    
+    def test_init_with_zero_width(self):
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+
+    def test_init_with_zero_height(self):
+        with self.assertRaises(ValueError):
+            Rectangle(2, 0)
 
     def test_init_with_invalid_x(self):
         with self.assertRaises(TypeError):
@@ -49,7 +59,6 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(1, 2, 3, -4)
 
-
     def test_area(self):
         r = Rectangle(5, 6)
         self.assertEqual(r.area(), 30)
@@ -60,7 +69,25 @@ class TestRectangle(unittest.TestCase):
         with unittest.mock.patch('sys.stdout', new=io.StringIO()) as fake_stdout:
             r.display()
             self.assertEqual(fake_stdout.getvalue(), expected_output)
+    
+    def test_display_without_x_and_y(self):
+        r = Rectangle(2, 3)
+        expected_output = "##\n##\n##\n"
+        with io.StringIO() as output:
+            sys.stdout = output
+            r.display()
+            self.assertEqual(output.getvalue(), expected_output)
+        sys.stdout = sys.__stdout__
 
+    def test_display_without_y(self):
+        r = Rectangle(2, 3, 1)
+        expected_output = " ##\n ##\n ##\n"
+        with io.StringIO() as output:
+            sys.stdout = output
+            r.display()
+            self.assertEqual(output.getvalue(), expected_output)
+        sys.stdout = sys.__stdout__
+    
     def test_str(self):
         r = Rectangle(3, 4, 5, 6, 7)
         self.assertEqual(str(r), "[Rectangle] (7) 5/6 - 3/4")
@@ -73,6 +100,11 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.height, 4)
         self.assertEqual(r.x, 5)
         self.assertEqual(r.y, 6)
+
+    def test_save_to_file_single_instance(self):
+        r = Rectangle(1, 2)
+        Rectangle.save_to_file([r])
+        self.assertTrue(os.path.exists("Rectangle.json"))
 
     def test_to_dictionary(self):
         r = Rectangle(3, 4, 5, 6, 7)
