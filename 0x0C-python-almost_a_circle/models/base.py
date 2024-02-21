@@ -171,5 +171,3 @@ class Base:
             pen.penup()
 
         window.exitonclick()
-
-
