@@ -3,18 +3,13 @@
 the GitHub API to display your id"""
 
 import requests
+from requests.auth import HTTPBasicAuth
 import sys
 
 if __name__ == "__main__":
     username = sys.argv[1]
     pwd = sys.argv[2]
-    url = f"https://api.github.com/users/{username}"
-
-    auth = (username, pwd)
-    response = requests.get(url, auth=auth)
-
-    if response.status_code == 200:
-        data = response.json()
-        print(data['id'])
-    else:
-        print("None")
+    url = f"https://api.github.com/user"
+    response = requests.get(url, auth=HTTPBasicAuth(username, pwd))
+    data = response.json()
+    print(data.get('id'))
